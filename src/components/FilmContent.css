@@ -1,12 +1,12 @@
 
 .card {
     width: 50%;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
     /* display: flex; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 3% 4% 6% 4%;
+  /* padding: 3% 4% 6% 4%; */
   
  
   
