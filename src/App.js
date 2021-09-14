@@ -11,7 +11,7 @@ function App() {
     <ThemeProvider theme={theme}>
     <div>
       <h1>Studio Ghibli Films</h1>
-      <FilmCard />
+      <FilmCard/>
 
     </div>
     </ThemeProvider>

@@ -1,14 +1,15 @@
 import ghibliData from './../data/GhibliData';
 import FilmContent from './FilmContent'
+import './FilmCard.css'
 
 
 const FilmCard = () => {
     console.log(ghibliData)
 return (
-    <div>
+    <div >
 {ghibliData.map((film) => {
     return(
-        <FilmContent 
+        <FilmContent
         id = {film.id}
         title = {film.title}
         original_title={film.original_title}
