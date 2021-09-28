@@ -1,20 +1,20 @@
 
 import './App.css';
 import FilmCard from './components/FilmCard'
-import {ThemeProvider} from '@material-ui/core'
-import theme from './theme'
+// import {ThemeProvider} from '@material-ui/core'
+// import theme from './theme'
 
 
 function App() {
 
   return (
-    <ThemeProvider theme={theme}>
-    <div>
+   
+    <div className="main"> 
       <h1>Studio Ghibli Films</h1>
-      <FilmCard/>
+      <FilmCard />
 
     </div>
-    </ThemeProvider>
+   
   );
 }
 
