@@ -28,16 +28,13 @@ const FilmCard = () => {
 //  } 
 
 
-  
-
-
-
 return (
     <Box 
     sx={{
       display: 'flex',
       flexWrap: 'wrap',
       justifyContent: 'center',
+      marginTop:7,
     }}
   >
 {ghibliData.map((film) => {
@@ -59,13 +56,7 @@ return (
 
 })}
 
-    
-
-
-
-
 </Box>
-
  )   
  
 }

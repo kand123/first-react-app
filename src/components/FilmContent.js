@@ -6,10 +6,11 @@ import Button from '@mui/material/Button'
 import CardContent from '@mui/material/CardContent'
 import Typography from '@mui/material/Typography'
 // import { flexbox } from '@mui/system';
-
+import CloseIcon from '@mui/icons-material/Close';
 import Modal from '@mui/material/Modal'
 import Box from '@mui/material/Box'
 import Rating from '@mui/material/Rating';
+
 
 
 const FilmContent = (props) => {
@@ -88,9 +89,13 @@ const FilmContent = (props) => {
           <Typography variant="h5">{title}</Typography>
           <Typography variant="h6">Plot Summary</Typography>
           <Typography variant = 'p' >{description}</Typography>
+          <CloseIcon sx={{position: "absolute", top: 20, right: 20,}} onClick={handleClose}></CloseIcon>
         </Box>
+
       </Modal>
-<Box sx={{alignSelf:'flex-end'}}>
+
+
+<Box >
  <Typography component="legend">My Rating</Typography>
       <Rating
         name="simple-controlled"
@@ -100,6 +105,9 @@ const FilmContent = (props) => {
         }}
       />
       </Box>
+
+
+
      </CardContent>
 
     </Card>
