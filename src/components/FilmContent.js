@@ -7,9 +7,11 @@ import CloseIcon from "@mui/icons-material/Close";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
+// import { flexbox } from "@mui/system";
+// import CardMedia from '@mui/material/CardMedia'
 
 const FilmContent = (props) => {
-  const { id, title, original_title, description, date } = props;
+  const { id, title, original_title, description, date, image } = props;
 
   const [open, setOpen] = React.useState(false);
   const handleOpen = () => setOpen(true);
@@ -36,47 +38,70 @@ const buttonDivStyle = {
 // height: "100%",
 // display: "flex",
 // flexFlow: 'column',
-
 // marginBottom: "15%",
-position: 'relative', 
-bottom: 30,
+// position: 'relative', 
+// bottom: 25,
+width: '100%',
 
+backgroundColor: 'rgb(222,222,222,.88)',
+paddingTop: '9%',
+paddingBottom: '5%',
+borderRadius: '6px',
 }
 
+const cardStyle ={
+  // backgroundColor: 'rgb(255,255,255,.85)',
+  backgroundImage: `url(${image})`,
+  backgroundSize: 'cover',
+  backgroundPosition: '50% 10%',
+  // opacity: 0.95,
+ 
+
+}
 
   const [value, setValue] = React.useState();
 
   return (
     <Card
+    style= {cardStyle}
       className="card"
+      
       sx={{
         bgcolor: "white",
         width: "300px",
-        height: "300px",
+        height: "450px",
         color: "black",
         padding: "2%",
         margin: "1%",
         textAlign: "center",
         lineHeight: "25px",
         fontWeight: "medium",
+       
+      
       }}
     >
       <CardContent
         key={id}
+        
         sx={{
           bgcolor: "white",
           color: "black",
          height:"100%",
          display: 'flex',
          flexFlow: 'column',
-         justifyContent: 'space-between',
+         justifyContent: 'flex-end',
+         backgroundColor: 'rgb(255,255,255,.0001)',
+         w: '100%',
+         p: 0,
         }}
       >
-       <div>
+       {/* <div>
         <Typography variant="h7">{original_title}</Typography>
         <Typography variant="h5" component="h2" mb="2%">
           {title}
         </Typography>
+       
+      
         <Typography
           variant="p"
           component="h4"
@@ -85,11 +110,29 @@ bottom: 30,
         >
           {date}
         </Typography>
-        </div>
+
+        </div> */}
 
         <Modal key={id} open={open} onClose={handleClose}>
           <Box bgcolor="white" style={modalBoxStyle}>
-            <Typography variant="h5">{title}</Typography>
+            {/* <Typography variant="h5">{title}</Typography> */}
+            <div>
+        <Typography variant="h7">{original_title}</Typography>
+        <Typography variant="h5" component="h2" mb="2%">
+          {title}
+        </Typography>
+       
+      
+        <Typography
+          variant="p"
+          component="h4"
+          position="50%"
+          fontWeight="normal"
+        >
+          {date}
+        </Typography>
+
+        </div>
             <Typography variant="h6">Plot Summary</Typography>
             <Typography variant="p">{description}</Typography>
             <CloseIcon
@@ -98,9 +141,13 @@ bottom: 30,
             ></CloseIcon>
           </Box>
         </Modal>
+      
         <div style={buttonDivStyle}>
-        <Button variant="outlined" sx={{bgcolor: 'lightblue', border: "lightblue", color: "black", mb:'2%'}} onClick={handleModalClose}>
-          Plot Summary
+        <Typography variant="h6" component="h2" mb="2%">
+          {title}
+        </Typography>
+        <Button variant="outlined" sx={{bgcolor: '#e9ab17', border: "#eac117", color: "black", mb:'2%'}} onClick={handleModalClose}>
+          More Info
         </Button>
         <Box>
           <Typography component="legend">My Rating</Typography>

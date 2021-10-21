@@ -26,7 +26,7 @@ return (
 <div>
 <ClickAwayListener onClickAway={RatingsClosed}>
       <Box sx={{ position: 'absolute',}}>
-      <Button variant="text" onClick={handleClick} sx={{color: 'pink', bgcolor: '#222', ml: 20,}}>My Favorites</Button>
+      <Button variant="text" onClick={handleClick} sx={{color: '#E8A317', bgcolor: '#222', ml: 20,}}>My Favorites</Button>
         {open ? (
           <Box sx={{bgcolor:'lightgray', ml:20, }}>
             <List  sx={{ width: '300%', maxWidth: 300, bgcolor: '#eee', zIndex:99}}>

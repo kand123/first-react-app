@@ -24,6 +24,7 @@ const filmData = useGhibliContext()
             original_title={film.original_title}
             description={film.description}
             date={film.release_date}
+            image={film.image}
           />
         );
       })}
