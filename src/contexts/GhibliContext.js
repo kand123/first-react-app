@@ -32,7 +32,6 @@ body: JSON.stringify(FilmResponse.data)
     }
     fetchFilms()
     }, [])
-
     
     return (
         <GhibliContext.Provider value={{

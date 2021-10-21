@@ -9,6 +9,9 @@ import ClickAwayListener from '@mui/material/ClickAwayListener';
 import Box from '@mui/material/Box';
 
 
+
+
+
 const RatingsButton = () => {
   
     const [open, setOpen] = React.useState(false);
@@ -53,7 +56,7 @@ return (
       <ListItem alignItems="flex-start">
        
         <ListItemText
-          primary="Movie"
+          primary={"Movie"}
           secondary={
            "Rating"
           }

@@ -7,6 +7,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
+import Container from "@mui/material/Container"
 // import { flexbox } from "@mui/system";
 // import CardMedia from '@mui/material/CardMedia'
 
@@ -20,6 +21,8 @@ const FilmContent = (props) => {
   const handleModalClose = () => {
     handleOpen();
   };
+
+  
 
   const modalBoxStyle = {
     position: "absolute",
@@ -59,7 +62,7 @@ const cardStyle ={
 
 }
 
-  const [value, setValue] = React.useState();
+  const [value, setValue] = React.useState(0);
 
   return (
     <Card
@@ -71,16 +74,20 @@ const cardStyle ={
         width: "300px",
         height: "450px",
         color: "black",
-        padding: "2%",
+        padding: "0",
+        
         margin: "1%",
         textAlign: "center",
         lineHeight: "25px",
         fontWeight: "medium",
-       
+      //  border: ".5px solid darkgray",
+       boxShadow: "10px 5px 35px rgb(255,255,255,.3)"
       
       }}
     >
+
       <CardContent
+      
         key={id}
         
         sx={{
@@ -91,10 +98,13 @@ const cardStyle ={
          flexFlow: 'column',
          justifyContent: 'flex-end',
          backgroundColor: 'rgb(255,255,255,.0001)',
-         w: '100%',
+        //  w: '100%',
          p: 0,
         }}
+        
       >
+     
+        
        {/* <div>
         <Typography variant="h7">{original_title}</Typography>
         <Typography variant="h5" component="h2" mb="2%">
@@ -151,18 +161,23 @@ const cardStyle ={
         </Button>
         <Box>
           <Typography component="legend">My Rating</Typography>
-          <Rating sx={{p:0, m:0}}
+          <Rating sx={{p:0, m:0,}}
             name="simple-controlled"
             value={value}
             onChange={(event, newValue) => {
               setValue(newValue);
+              
             }}
           />
         </Box>
         </div>
       </CardContent>
+      
     </Card>
   );
 };
 
 export default FilmContent;
+
+
+
