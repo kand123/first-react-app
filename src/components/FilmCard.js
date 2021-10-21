@@ -1,10 +1,12 @@
 import * as React from "react";
-import ghibliData from "./../data/GhibliData";
+// import ghibliData from "./../data/GhibliData";
 import FilmContent from "./FilmContent";
 import Box from "@mui/material/Box";
-
+import { useGhibliContext } from '../contexts/GhibliContext'
 
 const FilmCard = () => {
+const filmData = useGhibliContext()
+
   return (
     <Box
       sx={{
@@ -14,7 +16,7 @@ const FilmCard = () => {
         marginTop: 7,
       }}
     >
-      {ghibliData.map((film) => {
+      {filmData.films.map((film) => {
         return (
           <FilmContent
             id={film.id}
