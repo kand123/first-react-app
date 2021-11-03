@@ -23,7 +23,7 @@ statuscode: 200,
 body: JSON.stringify(FilmResponse.data)
 
 }
-// setFilms(ghibliFilm)
+
  
         }
         catch(error) {
