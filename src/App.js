@@ -20,10 +20,12 @@ function App() {
           <Welcome />
         </Route>
         <Route path="/films">
+          <GhibliContextProvider>
         <FilmCard/>
+        </GhibliContextProvider>
         </Route>
         <Route path="*">
-       <h1>Page Not Found</h1>
+       return <h1>Page Not Found</h1>
         </Route>
         </Switch>
       
