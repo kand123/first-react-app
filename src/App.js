@@ -12,6 +12,7 @@ function App() {
    
     <div className="main"> 
       <h1>Studio Ghibli Films</h1>
+      <GhibliContextProvider>
       <Switch>
         <Route path="/" exact>
           <Redirect to="/welcome" />
@@ -20,20 +21,20 @@ function App() {
           <Welcome />
         </Route>
         <Route path="/films">
-          <GhibliContextProvider>
+          
         <FilmCard/>
-        </GhibliContextProvider>
+        
         </Route>
         <Route path="*">
        return <h1>Page Not Found</h1>
         </Route>
         </Switch>
       
-      <GhibliContextProvider>
+      {/* <GhibliContextProvider> */}
       <RatingsButton/>
       {/* <FilmCard /> */}
+      {/* </GhibliContextProvider> */}
       </GhibliContextProvider>
-    
     </div>
    
   );
