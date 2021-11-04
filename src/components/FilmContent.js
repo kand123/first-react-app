@@ -7,9 +7,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
-// import Container from "@mui/material/Container"
-// import { flexbox } from "@mui/system";
-// import CardMedia from '@mui/material/CardMedia'
+
 
 const FilmContent = (props) => {
   const { id, title, original_title, description, date, image } = props;

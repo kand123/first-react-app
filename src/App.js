@@ -1,10 +1,10 @@
 
 import './App.css';
-import FilmCard from './components/FilmCard'
-// import {ThemeProvider} from '@material-ui/core'
-// import theme from './theme'
+import FilmCard from './pages/FilmCard'
 import RatingsButton from './components/RatingsButton'
 import {GhibliContextProvider} from './contexts/GhibliContext'
+import { Route, Switch, Redirect } from 'react-router-dom'
+import Welcome from './pages/Welcome'
 
 function App() {
 
@@ -13,10 +13,28 @@ function App() {
     <div className="main"> 
       <h1>Studio Ghibli Films</h1>
       <GhibliContextProvider>
+      <Switch>
+        <Route path="/" exact>
+          <Redirect to="/welcome" />
+        </Route>
+        <Route path="/welcome">
+          <Welcome />
+        </Route>
+        <Route path="/films">
+          
+        <FilmCard/>
+        
+        </Route>
+        <Route path="*">
+       return <h1>Page Not Found</h1>
+        </Route>
+        </Switch>
+      
+      {/* <GhibliContextProvider> */}
       <RatingsButton/>
-      <FilmCard />
+      {/* <FilmCard /> */}
+      {/* </GhibliContextProvider> */}
       </GhibliContextProvider>
-    
     </div>
    
   );

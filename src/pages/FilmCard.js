@@ -1,6 +1,5 @@
 import * as React from "react";
-// import ghibliData from "./../data/GhibliData";
-import FilmContent from "./FilmContent";
+import FilmContent from "../components/FilmContent";
 import Box from "@mui/material/Box";
 import { useGhibliContext } from '../contexts/GhibliContext'
 
