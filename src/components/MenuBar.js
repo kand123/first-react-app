@@ -7,7 +7,8 @@ import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useHistory } from 'react-router-dom'
-
+import Modal from '@mui/material/Modal';
+import LoginForm from '../components/login/LoginForm'
  
     import Menu from '@mui/material/Menu';
     import MenuItem from '@mui/material/MenuItem';
@@ -31,6 +32,20 @@ const handleNavSelection = (selection, shouldToggle) => {
   history.push(`/${selection}`)
 }
 
+ const [modalOpen, setmodalOpen] = React.useState(false);
+  const handleModalOpen = () => setmodalOpen(true);
+  const handleModalClose = () => setmodalOpen(false);
+
+ 
+
+  // const handleModalClose = () => {
+  //   handleOpen();
+    
+  // };
+
+
+
+
 
   return (
     <>
@@ -51,7 +66,7 @@ const handleNavSelection = (selection, shouldToggle) => {
             Studio Ghibli Fans
           </Typography>
           <Button color="inherit">Sign Up</Button>
-          <Button color="inherit">Login</Button>
+          <Button color="inherit" onClick={handleModalOpen}>Login</Button>
 
         </Toolbar>
 
@@ -59,7 +74,7 @@ const handleNavSelection = (selection, shouldToggle) => {
 
     </Box>
     
-    
+   
     
      
     
@@ -81,7 +96,10 @@ const handleNavSelection = (selection, shouldToggle) => {
             <MenuItem onClick={handleClose}>Characters</MenuItem>
           </Menu>
         </div>
-      
+        <Modal open={modalOpen}>
+<LoginForm closeHandler={handleModalClose}/>
+
+    </Modal>
     
     </>
   );

@@ -3,37 +3,40 @@ import Card from "@mui/material/Card";
 import Button from "@mui/material/Button";
 import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
-import CloseIcon from "@mui/icons-material/Close";
-import Modal from "@mui/material/Modal";
+// import CloseIcon from "@mui/icons-material/Close";
+// import Modal from "@mui/material/Modal";
 import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
-
+import { useHistory } from 'react-router-dom'
 
 const FilmContent = (props) => {
-  const { id, title, original_title, description, date, image } = props;
+  const { id, title, image } = props;
 
-  const [open, setOpen] = React.useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+  const history = useHistory()
+
+  // const [open, setOpen] = React.useState(false);
+  // const handleOpen = () => setOpen(true);
+  // const handleClose = () => setOpen(false);
 
   const handleModalClose = () => {
-    handleOpen();
+    // handleOpen();
+    history.push(`/films/${props.id}`)
   };
 
   
 
-  const modalBoxStyle = {
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    padding: "1.5%",
-    paddingBottom: "3%",
-    width: "50%",
-    transform: "translate(-50%, -50%)",
-    bgcolor: "white",
-    boxShadow: 24,
-    p: 4,
-  };
+  // const modalBoxStyle = {
+  //   position: "absolute",
+  //   top: "50%",
+  //   left: "50%",
+  //   padding: "1.5%",
+  //   paddingBottom: "3%",
+  //   width: "50%",
+  //   transform: "translate(-50%, -50%)",
+  //   bgcolor: "white",
+  //   boxShadow: 24,
+  //   p: 4,
+  // };
 
 const buttonDivStyle = {
 // height: "100%",
@@ -121,11 +124,11 @@ const cardStyle ={
 
         </div> */}
 
-        <Modal key={id} open={open} onClose={handleClose}>
+        {/* <Modal key={id}>
           <Box bgcolor="white" style={modalBoxStyle}>
             {/* <Typography variant="h5">{title}</Typography> */}
-            <div>
-        <Typography variant="h7">{original_title}</Typography>
+            {/* <div> */}
+        {/* <Typography variant="h7">{original_title}</Typography>
         <Typography variant="h5" component="h2" mb="2%">
           {title}
         </Typography>
@@ -142,13 +145,13 @@ const cardStyle ={
 
         </div>
             <Typography variant="h6">Plot Summary</Typography>
-            <Typography variant="p">{description}</Typography>
-            <CloseIcon
-              sx={{ position: "absolute", top: 20, right: 20 }}
-              onClick={handleClose}
-            ></CloseIcon>
-          </Box>
-        </Modal>
+            <Typography variant="p">{description}</Typography> */}
+            {/* <CloseIcon
+              // sx={{ position: "absolute", top: 20, right: 20 }}
+              // onClick={handleClose}
+            ></CloseIcon> */}
+          {/* </Box>
+        // </Modal> */} */
       
         <div style={buttonDivStyle}>
         <Typography variant="h6" component="h2" mb="2%">

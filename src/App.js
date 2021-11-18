@@ -6,6 +6,8 @@ import {GhibliContextProvider} from './contexts/GhibliContext'
 import { Route, Switch, Redirect } from 'react-router-dom'
 import Welcome from './pages/Welcome'
 import MenuBar from './components/MenuBar'
+import NotFound from './pages/NotFound'
+import FilmDetails from './pages/FilmDetails'
 
 function App() {
 
@@ -25,14 +27,18 @@ function App() {
   <Route path="/welcome">
     <Welcome/>
     </Route>
-      <Route path="/films">
+      <Route path="/films" exact>
       <h1>Studio Ghibli Films</h1>
       <RatingsButton/>
         <FilmCard/>
         
         </Route>
+<Route path="/films/:id" exact>
+  {/* <h1>Film Details</h1> */}
+  <FilmDetails/>
+</Route>
       <Route path="*">
-        <h1>Page Not Found</h1>
+        <NotFound/>
         </Route>
       
       <FilmCard /> 
