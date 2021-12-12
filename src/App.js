@@ -3,7 +3,7 @@ import './App.css';
 import FilmCard from './pages/FilmCard'
 import RatingsButton from './components/RatingsButton'
 import {GhibliContextProvider} from './contexts/GhibliContext'
-import { Route, Switch, Redirect } from 'react-router-dom'
+import { Route, Switch} from 'react-router-dom'
 import Welcome from './pages/Welcome'
 import MenuBar from './components/MenuBar'
 import NotFound from './pages/NotFound'
@@ -26,7 +26,7 @@ function App() {
       
     <Switch>
 <Route path="/" exact>
-  <Redirect to="/welcome" />
+  <Welcome/>
   </Route>
   <Route path="/welcome">
     <Welcome/>
