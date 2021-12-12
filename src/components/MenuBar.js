@@ -3,12 +3,14 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
+// import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useHistory } from 'react-router-dom'
-import Modal from '@mui/material/Modal';
-import LoginForm from '../components/login/LoginForm'
+import {useIdentityContext} from 'react-netlify-identity-gotrue'
+// import Modal from '@mui/material/Modal';
+// import LoginForm from '../components/login/LoginForm'
+// import SignupForm from '..components/login/SignupForm'
  
     import Menu from '@mui/material/Menu';
     import MenuItem from '@mui/material/MenuItem';
@@ -31,10 +33,11 @@ const history = useHistory()
 const handleNavSelection = (selection, shouldToggle) => {
   history.push(`/${selection}`)
 }
+const identity = useIdentityContext()
 
- const [modalOpen, setmodalOpen] = React.useState(false);
-  const handleModalOpen = () => setmodalOpen(true);
-  const handleModalClose = () => setmodalOpen(false);
+//  const [modalOpen, setmodalOpen] = React.useState(false);
+//   const handleModalOpen = () => setmodalOpen(true);
+//   const handleModalClose = () => setmodalOpen(false);
 
  
 
@@ -65,8 +68,47 @@ const handleNavSelection = (selection, shouldToggle) => {
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             Studio Ghibli Fans
           </Typography>
-          <Button color="inherit">Sign Up</Button>
-          <Button color="inherit" onClick={handleModalOpen}>Login</Button>
+
+
+          {!identity.user && !identity.provisionalUser && (
+              // <Tooltip title="Signup">
+                <IconButton
+                  color="inherit"
+                  size='small'
+                  onClick={() => handleNavSelection('signup', false)}
+                >
+                  {/* <AccountCircleIcon /> */}
+                  Signup
+                </IconButton>
+              // </Tooltip>
+            )}
+
+            {!identity.user && (
+              // <Tooltip title="Login">
+                <IconButton
+                  color="inherit"
+                  size='small'
+                  onClick={() => handleNavSelection('login', false)}
+                >
+                  {/* <LoginIcon /> */}
+                  Login
+                </IconButton>
+              // </Tooltip>
+            )}
+
+            {identity.user && (
+              // <Tooltip title="Logout">
+              <IconButton color="inherit" onClick={identity.logout}>
+                Logout
+                {/* <Avatar sx={{ width: 24, height: 24 }}>{identity.user?.user_metadata?.full_name.slice(0, 1)}</Avatar> */}
+              </IconButton>
+              // </Tooltip>
+            )}
+
+
+
+          {/* <Button color="inherit"onClick={() => handleNavSelection('signup', true)} >Sign Up</Button>
+          <Button color="inherit" onClick={() => handleNavSelection('login', true)}>Login</Button> */}
 
         </Toolbar>
 
@@ -96,11 +138,15 @@ const handleNavSelection = (selection, shouldToggle) => {
             <MenuItem onClick={handleClose}>Characters</MenuItem>
           </Menu>
         </div>
-        <Modal open={modalOpen}>
+        {/* <Modal open={modalOpen}>
 <LoginForm closeHandler={handleModalClose}/>
 
-    </Modal>
-    
+    </Modal> */}
+
+    {/* <Modal open={modalOpen}>
+<SignupForm closeHandler={handleModalClose}/>
+
+    </Modal> */}
     </>
   );
 }

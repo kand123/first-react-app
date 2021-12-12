@@ -19,7 +19,7 @@ return(
 {/* <Typography variant="h5">{title}</Typography> */}
 <div>
 <Typography variant="h7">{filmInfo.original_title}</Typography>
-<Typography variant="h5" component="h2" mb="2%">
+<Typography variant="h5" component="h3" mb="2%">
 {filmInfo.title}
 </Typography>
 

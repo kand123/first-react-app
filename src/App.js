@@ -8,6 +8,9 @@ import Welcome from './pages/Welcome'
 import MenuBar from './components/MenuBar'
 import NotFound from './pages/NotFound'
 import FilmDetails from './pages/FilmDetails'
+import LoginForm from './components/login/LoginForm'
+import SignupForm from './components/login/SignupForm'
+import NetlifyIdentityContext from 'react-netlify-identity-gotrue'
 
 function App() {
 
@@ -15,10 +18,11 @@ function App() {
    
 
     <div className="main"> 
+    <NetlifyIdentityContext url='https://mystifying-meninsky-5b0e02.netlify.app'>
+    
     <MenuBar/>
-      
       <GhibliContextProvider>
-        
+      
       
     <Switch>
 <Route path="/" exact>
@@ -37,6 +41,15 @@ function App() {
   {/* <h1>Film Details</h1> */}
   <FilmDetails/>
 </Route>
+
+<Route path="/login">
+  <LoginForm/>
+  </Route>
+
+  <Route path="/signup">
+    <SignupForm/>
+    </Route>
+
       <Route path="*">
         <NotFound/>
         </Route>
@@ -44,7 +57,7 @@ function App() {
       <FilmCard /> 
       </Switch>
       </GhibliContextProvider>
-
+</NetlifyIdentityContext>
 
     </div>
    

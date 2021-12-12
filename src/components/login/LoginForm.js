@@ -1,24 +1,29 @@
 import { Box, Button, TextField } from "@mui/material";
 import { Formik } from "formik";
 import * as Yup from 'yup'
-// import { useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
+import { useIdentityContext } from 'react-netlify-identity-gotrue'
+
+const modalBoxStyle = {
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  padding: "0",
+  paddingBottom: "2%",
+  width: "350px;",
+  transform: "translate(-50%, -50%)",
+  bgcolor: "white",
+  boxShadow: 24,
+  p: 3,
+};
+
+
 
 const LoginForm = (props) => {
-    
-const {closeHandler} = props
-
-  const modalBoxStyle = {
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    padding: "0",
-    paddingBottom: "2%",
-    width: "350px;",
-    transform: "translate(-50%, -50%)",
-    bgcolor: "white",
-    boxShadow: 24,
-    p: 3,
-  };
+  const history = useHistory()  
+const handleClose = () => history.push('/')
+const identity =useIdentityContext()
+  
 
   return (
     <Box sx={modalBoxStyle}>
@@ -34,18 +39,23 @@ const {closeHandler} = props
                 password: Yup.string().min(8, 'Password must be at least 8 characters').max(40).required('Password is required')
             })
         }
-          onSubmit={(value, {setErrors, setStatus, setSubmitting}) => {
+          onSubmit={async (value, {setErrors, setStatus, setSubmitting}) => {
               try {
                 setStatus({success:true})
                 setSubmitting(false)
-                console.log('Successfully submitted!')
+                await identity.login({
+                  email: value.email,
+                  password: value.password
+                }).then(() => {
+                  handleClose()
+                })
               } catch (err) {
                   console.error(err)
                   setStatus({ success:false })
                   setErrors({submit: err.message })
                   setSubmitting(false)
               } finally {
-                  closeHandler()
+                  handleClose()
               }
         }}
       >

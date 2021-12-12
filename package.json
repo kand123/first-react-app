@@ -14,6 +14,7 @@
     "formik": "^2.2.9",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-netlify-identity-gotrue": "^0.3.5",
     "react-router-dom": "^5.3.0",
     "react-scripts": "^4.0.3",
     "web-vitals": "^1.1.2",
@@ -45,6 +46,6 @@
     ]
   },
   "devDependencies": {
-    "netlify-cli": "^6.14.25"
+    "netlify-cli": "^6.15.0"
   }
 }
