@@ -98,7 +98,7 @@ const identity = useIdentityContext()
 
             {identity.user && (
               // <Tooltip title="Logout">
-              <IconButton color="inherit" onClick={identity.logout}>
+              <IconButton size='small' color="inherit" onClick={identity.logout}>
                 Logout
                 {/* <Avatar sx={{ width: 24, height: 24 }}>{identity.user?.user_metadata?.full_name.slice(0, 1)}</Avatar> */}
               </IconButton>
