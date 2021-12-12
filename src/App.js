@@ -18,7 +18,7 @@ function App() {
    
 
     <div className="main"> 
-    <NetlifyIdentityContext url='https://mystifying-meninsky-5b0e02.netlify.app'>
+    <NetlifyIdentityContext url='https://mystudioghiblifilms.netlify.app'>
     
     <MenuBar/>
       <GhibliContextProvider>
