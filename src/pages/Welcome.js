@@ -123,8 +123,6 @@ const routeChange = () =>{
        >
          Explore the world of Studio Ghibli
        </h3>
-       </>
-      )}
        <div>
             <Box sx={{ flexGrow: 1, mt: 5, ml: 2, mr: 2, mb: 40 }}>
               <Grid
@@ -174,6 +172,9 @@ const routeChange = () =>{
               </Grid>
             </Box>
           </div>
+       </>
+      )}
+       
     </>
   );
 };
