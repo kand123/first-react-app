@@ -6,8 +6,8 @@ UI elements from the MUI version 5 package
 
 Final project requirements: 
 
-Effectively use conditional logic and JavaScript array methods(e.g. Filter, Map, Reduce, Find) to render large lists.
-Encapsulate your code as React functional components.
+#Effectively use conditional logic and JavaScript array methods(e.g. Filter, Map, Reduce, Find) to render large lists.
+#Encapsulate your code as React functional components.
 Work with command-line tools and NPM to create and manage your project within a real development toolset.
 Allow communication between components using props and the Context API.
 Present a form for user input that provides useful form validation and feedback for at least 3 data input items (e.g. name, password).
