@@ -26,6 +26,18 @@ const identity =useIdentityContext()
   
 
   return (
+    <>
+     <h1
+        className="font-link"
+        style={{
+          fontSize: "3.5rem",
+          marginTop: "20px",
+          marginBottom: "0",
+          color: "lightblue",
+        }}
+      >
+        Studio Ghibli FanHub
+      </h1>
     <Box sx={modalBoxStyle}>
       <h4>Login to your account</h4>
       <Formik
@@ -96,6 +108,9 @@ const identity =useIdentityContext()
         )}
       </Formik>
     </Box>
+    <Box sx={{height: '100vh'}}>
+   </Box>
+    </>
   );
 };
 

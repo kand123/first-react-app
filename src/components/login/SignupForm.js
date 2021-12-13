@@ -26,6 +26,18 @@ const SignupForm = (props) => {
     const identity = useIdentityContext()
     
     return (
+        <>
+         <h1
+        className="font-link"
+        style={{
+          fontSize: "3.5rem",
+          marginTop: "20px",
+          marginBottom: "0",
+          color: "lightblue",
+        }}
+      >
+        Studio Ghibli FanHub
+      </h1>
         <Box sx={modalBoxStyle}>
             <h4>Create an Account</h4>
             <Formik
@@ -131,6 +143,10 @@ const SignupForm = (props) => {
         }   
         </Formik>     
         </Box>
+        <Box sx={{height: '100vh'}}>
+
+        </Box>
+        </>
     )
 }
 

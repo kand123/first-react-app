@@ -8,6 +8,7 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { useHistory } from 'react-router-dom'
 import {useIdentityContext} from 'react-netlify-identity-gotrue'
+
 // import Modal from '@mui/material/Modal';
 // import LoginForm from '../components/login/LoginForm'
 // import SignupForm from '..components/login/SignupForm'
@@ -54,7 +55,7 @@ const identity = useIdentityContext()
     <>
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static">
-        <Toolbar>
+        <Toolbar sx={{bg: '#4181E6'}}>
           <IconButton
             size="large"
             edge="start"
@@ -66,7 +67,7 @@ const identity = useIdentityContext()
             <MenuIcon/>
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Studio Ghibli Fans
+            Studio Ghibli FanHub
           </Typography>
 
 
