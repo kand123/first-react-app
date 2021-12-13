@@ -1,7 +1,7 @@
 
 import './App.css';
 import FilmCard from './pages/FilmCard'
-import RatingsButton from './components/RatingsButton'
+// import RatingsButton from './components/RatingsButton'
 import {GhibliContextProvider} from './contexts/GhibliContext'
 import { Route, Switch} from 'react-router-dom'
 import Welcome from './pages/Welcome'
@@ -12,8 +12,9 @@ import LoginForm from './components/login/LoginForm'
 import SignupForm from './components/login/SignupForm'
 import NetlifyIdentityContext from 'react-netlify-identity-gotrue'
 
-function App() {
 
+function App() {
+  
   return (
    
 
@@ -32,8 +33,14 @@ function App() {
     <Welcome/>
     </Route>
       <Route path="/films" exact>
-      <h1>Studio Ghibli Films</h1>
-      <RatingsButton/>
+        
+      <h1 className="font-link" style={{fontSize:'2rem'}}>Ghibli Films</h1>
+
+     
+
+
+
+      {/* <RatingsButton/> */}
         <FilmCard/>
         
         </Route>

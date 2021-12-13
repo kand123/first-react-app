@@ -8,10 +8,12 @@ import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
 import Rating from "@mui/material/Rating";
 import { useHistory } from 'react-router-dom'
+import { useIdentityContext } from "react-netlify-identity-gotrue";
+
 
 const FilmContent = (props) => {
   const { id, title, image } = props;
-
+  const identity = useIdentityContext();
   const history = useHistory()
 
   // const [open, setOpen] = React.useState(false);
@@ -66,6 +68,12 @@ const cardStyle ={
   const [value, setValue] = React.useState(0);
 
   return (
+<>
+
+
+    {identity.user && (
+
+
     <Card
     style= {cardStyle}
       className="card"
@@ -154,7 +162,7 @@ const cardStyle ={
         // </Modal> */} */
       
         <div style={buttonDivStyle}>
-        <Typography variant="h6" component="h2" mb="2%">
+        <Typography variant="h6" component="h2" mb="2%" color="black">
           {title}
         </Typography>
         <Button variant="outlined" sx={{bgcolor: '#e9ab17', border: "#eac117", color: "black", mb:'2%'}} onClick={handleModalClose}>
@@ -175,6 +183,8 @@ const cardStyle ={
       </CardContent>
       
     </Card>
+    )}
+    </>
   );
 };
 

@@ -9,6 +9,7 @@ import ButtonBase from "@mui/material/ButtonBase";
 import filmImage from "../data/images/laputa041.jpeg";
 import totoroImage from "../data/images/totoro049.jpeg";
 import {useHistory} from 'react-router-dom';
+import characterImage from "../data/images/chihiro022.jpeg"
 // import { flexbox } from '@mui/system';
 
 
@@ -142,7 +143,7 @@ const routeChange = () =>{
                   >
                     FILMS
                     <ButtonBase onClick = {routeChange} sx={{ width: "100%", height: 275 }}>
-                      <Img alt="complex" src={filmImage} />
+                      <Img alt="scene from the film My Neighbor Totoro" src={filmImage} />
                     </ButtonBase>
                   </Item>
                 </Grid>
@@ -152,11 +153,13 @@ const routeChange = () =>{
                       height: 275,
                       display: "flex",
                       flexDirection: "column",
+                      fontSize: '1.1rem',
+                      color: 'black'
                     }}
                   >
                     CHARACTERS
                     <ButtonBase sx={{ width: "100%", height: 275 }}>
-                      <Img alt="complex" src="#" />
+                      <Img alt="character named Chihiro" src={characterImage} />
                     </ButtonBase>
                   </Item>
                 </Grid>
