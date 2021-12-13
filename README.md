@@ -19,6 +19,6 @@ Final project requirements:
 11. Structure, document, and deploy your final project code according to common industry practices.
 
 
-You can see this React app at [Studio Ghibli FanHub] : http://mystudioghiblifilms.netlify.app 
+You can see this React app at http://mystudioghiblifilms.netlify.app 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
